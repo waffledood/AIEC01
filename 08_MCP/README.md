@@ -7,13 +7,14 @@
 
 ### [Quicklinks]()
 
-| Session Sheet | Recording | Slides | Repo | Homework | Feedback |
-|:--------------|:----------|:-------|:-----|:---------|:---------|
-| [MCP Servers](../00_Docs/Session_Sheets/17_MCP_Servers_and_A2A/README.md) | | | You are here! | | |
+| Session Sheet                                                             | Recording | Slides | Repo          | Homework | Feedback |
+| :------------------------------------------------------------------------ | :-------- | :----- | :------------ | :------- | :------- |
+| [MCP Servers](../00_Docs/Session_Sheets/17_MCP_Servers_and_A2A/README.md) |           |        | You are here! |          |          |
 
 ## Useful Resources
 
 **MCP (Model Context Protocol)**
+
 - [MCP Official Docs](https://modelcontextprotocol.io/) — Spec, tutorials, and guides
 - [MCP-UI](https://mcpui.dev/) — Official standard for interactive UI in MCP
 - [MCP Auth Guide (Auth0)](https://auth0.com/blog/mcp-specs-update-all-about-auth/) — Deep dive into MCP auth spec updates
@@ -174,3 +175,8 @@ Add at least one new tool to the cat shop MCP server (e.g., `search_products`, `
 Build a custom MCP client that connects to the cat shop server over Streamable HTTP, authenticates via OAuth, and orchestrates a multi-step shopping flow (browse → add to cart → checkout). Compare the developer experience of MCP-based tool integration vs. traditional REST API calls.
 
 Include your findings and a demo in your Loom video.
+
+# Misc Notes
+
+- When adding the ngrok tunnel URL to ChatGPT, add `mcp` at the end of the URL:
+  `https://sample-ngrok.com/mcp`

@@ -174,7 +174,9 @@ What is Streamable HTTP transport in MCP, and why might you expose a server publ
 
 #### Answer
 
-_(insert your answer here)_
+Streamable HTTP transport in MCP means the server can push multiple messages to the client over a single long-lived HTTP connection. This is different from stdio where messages are just piped between processes locally. The distinction of Streamable HTTP over stdio is local process communication vs network communication.
+
+As for exposing a server publicly with OAuth, a local stdio connection requires both server & client to be on the same machine! Which will not allow us to connect out Cat Shop MCP to other MCP clients. And as mentioned in the previous response to Question #1, OAuth makes our MCP server secure.
 
 ## Activity 1: Extend the MCP Server
 

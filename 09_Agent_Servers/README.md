@@ -7,19 +7,21 @@
 
 ### [Quicklinks]()
 
-| Session Sheet | Recording | Slides | Repo | Homework | Feedback |
-|:--------------|:----------|:-------|:-----|:---------|:---------|
-| [Session 9: Agent Servers & E2E Agents](https://github.com/AI-Maker-Space/The-AI-Engineering-Certification-v1.0/tree/main/00_Docs/Modules/09_Agent_servers_%26_E2E_Agents) |[Recording!](https://us02web.zoom.us/rec/share/ByhPGNz-CQ4C9k859VnRIoGPfkS4AdBzLPQiCIgEafYiDjYxtNXUjidTI1dM-79R.oCxzwNn0SyVAWj88) <br> passcode: `r14dvS$V`| [Session 9 Slides](https://canva.link/yqymnzjmzhpnyiy) | You are here! | [Session 9 Assignment](https://forms.gle/PMmqBBLZ8d8fGg1L8) | [Feedback 7/1](https://forms.gle/36tnHPpeS562DD3fA) |
+| Session Sheet                                                                                                                                                              | Recording                                                                                                                                                   | Slides                                                 | Repo          | Homework                                                    | Feedback                                            |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------- | :------------ | :---------------------------------------------------------- | :-------------------------------------------------- |
+| [Session 9: Agent Servers & E2E Agents](https://github.com/AI-Maker-Space/The-AI-Engineering-Certification-v1.0/tree/main/00_Docs/Modules/09_Agent_servers_%26_E2E_Agents) | [Recording!](https://us02web.zoom.us/rec/share/ByhPGNz-CQ4C9k859VnRIoGPfkS4AdBzLPQiCIgEafYiDjYxtNXUjidTI1dM-79R.oCxzwNn0SyVAWj88) <br> passcode: `r14dvS$V` | [Session 9 Slides](https://canva.link/yqymnzjmzhpnyiy) | You are here! | [Session 9 Assignment](https://forms.gle/PMmqBBLZ8d8fGg1L8) | [Feedback 7/1](https://forms.gle/36tnHPpeS562DD3fA) |
 
 ## Useful Resources
 
 **LangSmith Deployment & Studio**
+
 - [LangSmith Deployment docs](https://docs.langchain.com/langsmith/deployments) — Deploy, manage, and monitor agent APIs
 - [LangGraph Studio](https://docs.langchain.com/langgraph-platform/langgraph-studio) — Visualize, debug, and test agents locally and in production
 - [Agent Server API](https://docs.langchain.com/langsmith/agent-server) — Threads, runs, assistants, and streaming
 - [You don't know what your agent will do until it's in production](https://blog.langchain.com/you-dont-know-what-your-agent-will-do-until-its-in-production/)
 
 **Frontend Integration**
+
 - [`@langchain/react` — `useStream` hook](https://www.npmjs.com/package/@langchain/react) — Stream agent responses in React/Next.js
 - [`langgraph-nextjs-api-passthrough`](https://www.npmjs.com/package/langgraph-nextjs-api-passthrough) — Secure Next.js API routes that proxy to your deployed agent without exposing keys in the browser
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/nextjs) — Deploy the frontend
@@ -74,7 +76,7 @@ In addition to tools from earlier sessions, you will need:
 2. **Docker** installed locally (needed for `langgraph up` and some deploy paths)
 3. Your agent code pushed to a **GitHub** repository (needed for LangSmith cloud deploys)
 4. A [Vercel](https://vercel.com/) account
-5. *(Optional)* **LangSmith Plus** (~$40/month) for one-click cloud deploys via `langgraph deploy`
+5. _(Optional)_ **LangSmith Plus** (~$40/month) for one-click cloud deploys via `langgraph deploy`
 
 ## Quick Command Reference
 
@@ -428,7 +430,11 @@ Why does LangSmith deploy your agent as an API backend only, and why do you stil
 
 #### Answer
 
-_(insert your answer here)_
+That's because LangSmith is meant for deploying & running agentic backends (graphs). It makes sense that the LangSmith platform only handles graphs.
+
+The frontend deployment is handled by Vercel.
+
+This follows the client-server architecture & it makes sense that we have 2 separate platforms to handle the frontend (client) & backend (server) deployments.
 
 ### Question #2
 
@@ -436,7 +442,9 @@ Why should the LangSmith API key live in a Next.js API route (server-side) inste
 
 #### Answer
 
-_(insert your answer here)_
+This is for security reasons!
+
+Anything that is shipped to the browser will be visible to the client. If the key is embedded directly in client-side JS, we run the danger of our users (or other bad actors) possibly abusing the key!
 
 ## Activity 1: Build a Helpfulness Loop in Production
 

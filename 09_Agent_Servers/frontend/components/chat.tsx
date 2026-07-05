@@ -20,6 +20,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import { getMessageText, toolLabel } from "@/lib/messages";
+import { Markdown } from "@/components/markdown";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "/api";
 
@@ -201,13 +202,13 @@ function MessageRow({ message }: { message: StreamMessage }) {
         {text && (
           <div
             className={cn(
-              "rounded-2xl px-4 py-2.5 text-sm whitespace-pre-wrap",
+              "rounded-2xl px-4 py-2.5",
               isHuman
-                ? "bg-primary text-primary-foreground"
+                ? "bg-primary text-primary-foreground whitespace-pre-wrap text-sm"
                 : "bg-muted text-foreground"
             )}
           >
-            {text}
+            {isHuman ? text : <Markdown>{text}</Markdown>}
           </div>
         )}
       </div>
